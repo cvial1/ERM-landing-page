@@ -29,15 +29,15 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contacto</h3>
             <div className="space-y-2 text-gray-400">
-              <p>contacto@vision361.com</p>
-              <p>+34 900 123 456</p>
-              <p>Madrid, España</p>
+              <p>cvial@carbono-x.cl</p>
+              <p>+569 6831 3641</p>
+              <p>Santiago, Chile</p>
             </div>
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Visión361. Todos los derechos reservados.</p>
+        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-300">
+          <p>&copy; 2025 Visión361. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

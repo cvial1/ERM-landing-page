@@ -13,7 +13,7 @@ const Header = () => {
             <img 
               src="/lovable-uploads/fb47bac8-4b60-48e5-a46a-aec57e6cb5d9.png" 
               alt="Visión361 Logo" 
-              className="h-12 w-auto"
+              className="h-16 w-auto"
             />
           </div>
           
