@@ -46,7 +46,7 @@ const Contact = () => {
                 <Mail className="h-6 w-6 text-blue-600 mt-1 mr-4" />
                 <div>
                   <h4 className="font-semibold text-gray-900">Email</h4>
-                  <p className="text-gray-600">contacto@vision361.com</p>
+                  <p className="text-gray-600">cvial@carbono-x.cl</p>
                 </div>
               </div>
               
@@ -54,7 +54,7 @@ const Contact = () => {
                 <Phone className="h-6 w-6 text-blue-600 mt-1 mr-4" />
                 <div>
                   <h4 className="font-semibold text-gray-900">Teléfono</h4>
-                  <p className="text-gray-600">+34 900 123 456</p>
+                  <p className="text-gray-600">+569 6831 3641</p>
                 </div>
               </div>
               
@@ -62,7 +62,7 @@ const Contact = () => {
                 <MapPin className="h-6 w-6 text-blue-600 mt-1 mr-4" />
                 <div>
                   <h4 className="font-semibold text-gray-900">Ubicación</h4>
-                  <p className="text-gray-600">Madrid, España</p>
+                  <p className="text-gray-600">Santiago, Chile</p>
                 </div>
               </div>
             </div>
@@ -156,3 +156,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
