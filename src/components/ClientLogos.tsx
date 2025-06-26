@@ -1,4 +1,5 @@
 
+
 const ClientLogos = () => {
   const clients = [
     { name: "FORUS", logo: "/lovable-uploads/d03f0dd3-cc72-4816-8650-a2ae5b599629.png" },
@@ -27,7 +28,7 @@ const ClientLogos = () => {
           {clients.map((client, index) => (
             <div 
               key={index}
-              className="flex items-center justify-center p-6 grayscale hover:grayscale-0 transition-all duration-300 border border-gray-100 rounded-lg hover:shadow-md"
+              className="flex items-center justify-center p-6 transition-all duration-300 border border-gray-100 rounded-lg hover:shadow-md"
             >
               <div className="text-center">
                 <div className="w-32 h-16 flex items-center justify-center bg-white rounded mb-2">
@@ -57,3 +58,4 @@ const ClientLogos = () => {
 };
 
 export default ClientLogos;
+
