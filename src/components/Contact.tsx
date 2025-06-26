@@ -1,6 +1,7 @@
 
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,11 +10,32 @@ const Contact = () => {
     company: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    
     console.log('Form submitted:', formData);
-    // Handle form submission here
+    
+    // Simulate form submission delay
+    setTimeout(() => {
+      toast({
+        title: "Mensaje enviado",
+        description: "Gracias por contactarnos. Te responderemos pronto.",
+      });
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        message: ''
+      });
+      
+      setIsSubmitting(false);
+    }, 1000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -91,6 +113,7 @@ const Contact = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -106,6 +129,7 @@ const Contact = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -121,6 +145,7 @@ const Contact = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -137,15 +162,17 @@ const Contact = () => {
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Cuéntanos sobre tus necesidades de gestión de riesgos..."
                   required
+                  disabled={isSubmitting}
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center justify-center group"
+                disabled={isSubmitting}
+                className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center justify-center group disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Enviar Mensaje
-                <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
+                {!isSubmitting && <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />}
               </button>
             </form>
           </div>
@@ -156,4 +183,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
